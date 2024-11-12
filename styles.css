@@ -9,6 +9,10 @@
     --gray950: #111111;
     --gray500: #6B6B6B;
     --yellow-card: #F4D04E;
+
+    --small-text: clamp(0.75rem, 1.9vw, 0.875rem);
+    --medium-text: clamp(0.875rem, 2vw, 1rem);
+    --large-text: clamp(1.25rem, 3.1vw, 1.5rem);
 }
 
 * {
@@ -21,6 +25,7 @@ html {
 
 body {
     background-color: var(--yellow-card);
+    overflow: hidden;
 }
 
 main {
@@ -29,12 +34,12 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
 }
 
 .card {
-    width: 384px;
-    height: 522px;
+    width: clamp(327px, 50vw,384px);
+    height: clamp(501px, 68vw, 522px);
+
     padding: 24px;
     background-color: white;
     color: var(--gray950);
@@ -48,6 +53,9 @@ main {
     display: block;
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -61,7 +69,10 @@ main {
     margin: 0;
     padding: 0;
     font-weight: 800;
-    font-size: 14px;
+
+    font-size: var(--small-text);
+
+
     line-height: 150%;
     background-color: #F4D04E;
     border-radius: 4px;
@@ -76,14 +87,18 @@ main {
     
     margin-top: 12px;
     font-weight: 500;
-    font-size: 14px;
+
+    font-size: var(--small-text);
+    
     line-height: 150%;
 }
 
 .title {
     margin-top: 0;
     font-weight: 800;
-    font-size: 24px;
+
+    font-size: var(--large-text);
+
     line-height: 150%;
     display: inline-block;
 }
@@ -100,7 +115,9 @@ main {
 .description {
     margin: 0;
     font-weight: 500;
-    font-size: 16px;
+
+    font-size: var(--medium-text);
+
     line-height: 150%;
     color: var(--gray500);
 }
